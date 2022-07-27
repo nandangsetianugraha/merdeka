@@ -12,8 +12,7 @@ $query = $connect->query($sql);
 while($s=$query->fetch_assoc()) {
 	$ids=$s['id_tp'];
 	$actionButton = '
-	<a href="#editTema" class="btn btn-effect-ripple btn-xs btn-danger" type="button" id="'.$ids.'" data-toggle="modal" data-id="'.$ids.'"><i class="fa fa-edit"></i> Edit</a>
-	<button class="btn btn-effect-ripple btn-xs btn-danger" data-toggle="modal" data-target="#removeMateriModal" onclick="removeTujuan('.$ids.')"> <i class="fa fa-trash"></i> Hapus</button>
+	<button class="btn btn-effect-ripple btn-xs btn-danger" data-toggle="modal" data-target="#removeMateriModal" onclick="removeTujuan('.$ids.')"> <i class="fa fa-trash"></i></button>
 	';
 	$output['data'][] = array(
 		$s['tp'],

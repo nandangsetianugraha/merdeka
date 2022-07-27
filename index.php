@@ -28,7 +28,8 @@ $status=$bioku['status_kepegawaian_id'];
 $namagr=$bioku['nama'];
 $namany=explode(" ",$namagr);
 //$level=$bioku['jenis_ptk_id'];
-$jns_ptk = $connect->query("select * from jenis_ptk where jenis_ptk_id='$level'")->fetch_assoc();
+$lvl=$bioku['jenis_ptk_id'];
+$jns_ptk = $connect->query("select * from jenis_ptk where jenis_ptk_id='$lvl'")->fetch_assoc();
 $status_ptk = $connect->query("select * from status_kepegawaian where status_kepegawaian_id='$status'")->fetch_assoc();
 if($level==96){
 		//$sql_mk=mysqli_query($koneksi, "select * from rombel where tapel='$tapel' and pai='$idku' order by nama_rombel asc");
