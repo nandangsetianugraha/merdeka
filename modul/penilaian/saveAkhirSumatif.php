@@ -30,7 +30,7 @@ if(is_numeric($nilai)){
         	};
         }else{
         	$sql = "INSERT INTO sas(id_pd, kelas, smt, tapel, mapel, nilai) VALUES('$idp','$ab','$smt','$tapel','$mpid','$nilai')";
-			$aktiv='Input Nilai Sumatif Akhir Semester '.$pelajaran['kd_mapel'].'] atas nama '.$nama['nama'];
+			$aktiv='Input Nilai Sumatif Akhir Semester ['.$pelajaran['kd_mapel'].'] atas nama '.$nama['nama'];
 			$sql1 = "INSERT INTO log(ptk_id, logDate, activity) VALUES('$ptkid','$waktu','$aktiv')";
         };
 		$query1 = $connect->query($sql);

@@ -10,52 +10,52 @@
 						<select class="form-select" id="kelas" name="kelas">
 							<option value="0">Pilih Rombel</option>
 							<?php 
-							$sql4 = "select * from rombel where tapel='$tapel' and pai='$idku' order by nama_rombel asc";
+							$sql4 = "select * from rombel where tapel='$tapel' and pai='$idku' and kurikulum='Kurikulum Merdeka' order by nama_rombel asc";
 							$query4 = $connect->query($sql4);
 							while($nk=$query4->fetch_assoc()){
-								if(substr($nk['nama_rombel'],0,1)==1 or substr($nk['nama_rombel'],0,1)==4){
+								
 							?>
 							<option value="<?=$nk['nama_rombel'];?>"><?=$nk['nama_rombel'];?></option>
-							<?php }};?>
+							<?php };?>
 						</select>
 						<?php }elseif($level==95){ ?>
 						<label class="form-label" for="example-text-input">Kelas</label>
 						<select class="form-select" id="kelas" name="kelas">
 							<option value="0">Pilih Rombel</option>
 							<?php 
-							$sql4 = "select * from rombel where tapel='$tapel' and penjas='$idku' order by nama_rombel asc";
+							$sql4 = "select * from rombel where tapel='$tapel' and penjas='$idku' and kurikulum='Kurikulum Merdeka' order by nama_rombel asc";
 							$query4 = $connect->query($sql4);
 							while($nk=$query4->fetch_assoc()){
-								if(substr($nk['nama_rombel'],0,1)==1 or substr($nk['nama_rombel'],0,1)==4){
+								
 							?>
 							<option value="<?=$nk['nama_rombel'];?>"><?=$nk['nama_rombel'];?></option>
-							<?php }};?>
+							<?php };?>
 						</select>
 						<?php }elseif($level==94){ ?>
 						<label class="form-label" for="example-text-input">Kelas</label>
 						<select class="form-select" id="kelas" name="kelas">
 							<option value="0">Pilih Rombel</option>
 							<?php 
-							$sql4 = "select * from rombel where tapel='$tapel' and inggris='$idku' order by nama_rombel asc";
+							$sql4 = "select * from rombel where tapel='$tapel' and inggris='$idku' and kurikulum='Kurikulum Merdeka' order by nama_rombel asc";
 							$query4 = $connect->query($sql4);
 							while($nk=$query4->fetch_assoc()){
-								if(substr($nk['nama_rombel'],0,1)==1 or substr($nk['nama_rombel'],0,1)==4){
+								
 							?>
 							<option value="<?=$nk['nama_rombel'];?>"><?=$nk['nama_rombel'];?></option>
-							<?php }};?>
+							<?php };?>
 						</select>
 						<?php }elseif($level==11){ ?>
 						<label class="form-label" for="example-text-input">Kelas</label>
 						<select class="form-select" id="kelas" name="kelas">
 							<option value="0">Pilih Rombel</option>
 							<?php 
-							$sql4 = "select * from rombel where tapel='$tapel' order by nama_rombel asc";
+							$sql4 = "select * from rombel where tapel='$tapel' and kurikulum='Kurikulum Merdeka' order by nama_rombel asc";
 							$query4 = $connect->query($sql4);
 							while($nk=$query4->fetch_assoc()){
-								if(substr($nk['nama_rombel'],0,1)==1 or substr($nk['nama_rombel'],0,1)==4){
+								
 							?>
 							<option value="<?=$nk['nama_rombel'];?>"><?=$nk['nama_rombel'];?></option>
-							<?php }};?>
+							<?php };?>
 						</select>
 						<?php }else{ ?>
 						<label class="form-label" for="example-text-input">Kelas</label>

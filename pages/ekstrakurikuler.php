@@ -13,13 +13,13 @@
 							<select class="form-select" id="kelas" name="kelas">
 								<option value="0">Pilih Rombel</option>
 								<?php 
-								$sql4 = "select * from rombel where tapel='$tapel' order by nama_rombel asc";
+								$sql4 = "select * from rombel where tapel='$tapel' and kurikulum='Kurikulum Merdeka' order by nama_rombel asc";
 								$query4 = $connect->query($sql4);
 								while($nk=$query4->fetch_assoc()){
-									if(substr($nk['nama_rombel'],0,1)==1 or substr($nk['nama_rombel'],0,1)==4){
+									
 								?>
 								<option value="<?=$nk['nama_rombel'];?>"><?=$nk['nama_rombel'];?></option>
-								<?php }};?>
+								<?php };?>
 							</select>
 						  </div>
 						</div>

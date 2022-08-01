@@ -11,7 +11,7 @@
               <a class="link-fx fw-bold tracking-wide mx-auto" href="./">
                 <span class="smini-hidden">
                   <i class="fa fa-fire text-primary"></i>
-                  <span class="fs-4 text-dual">AP</span><span class="fs-4 text-primary">INS</span>
+                  <span class="fs-4 text-dual">APINS</span> <span class="fs-4 text-primary">Merdeka</span>
                 </span>
               </a>
             </div>
@@ -155,6 +155,7 @@
                     </li>
                   </ul>
                 </li>
+				<?php if ($level==98 or $level==97 or $level==11) { ?>
 				<li class="nav-main-item">
                   <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                     <i class="nav-main-link-icon fa fa-list-alt"></i>
@@ -167,8 +168,8 @@
                       </a>
                     </li>
 					<li class="nav-main-item">
-                      <a class="nav-main-link" href="<?=base_url();?>absensi">
-                        <span class="nav-main-link-name">Absensi</span>
+                      <a class="nav-main-link" href="<?=base_url();?>data-absensi">
+                        <span class="nav-main-link-name">Data Absensi</span>
                       </a>
                     </li>
 					<li class="nav-main-item">
@@ -178,7 +179,8 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-main-heading">Rapor</li>
+				<?php } ?>
+				<li class="nav-main-heading">Rapor</li>
                 <li class="nav-main-item">
                   <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                     <i class="nav-main-link-icon fa fa-coffee"></i>
@@ -190,6 +192,7 @@
                         <span class="nav-main-link-name">Generate Rapor</span>
                       </a>
                     </li>
+					<?php if($level==11 or $level==98 or $level==97){ ?>
                     <li class="nav-main-item">
                       <a class="nav-main-link" href="<?=base_url();?>cetak-rapor">
                         <span class="nav-main-link-name">Cetak Rapor</span>
@@ -200,6 +203,7 @@
                         <span class="nav-main-link-name">Rekapitulasi Rapor</span>
                       </a>
                     </li>
+					<?php } ?>
                   </ul>
                 </li>
               </ul>

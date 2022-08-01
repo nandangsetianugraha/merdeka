@@ -1,3 +1,9 @@
+<?php 
+require_once 'inc/Json.class.php'; 
+$db = new Json();
+$versi = $db->getRows();
+?>
+
 		  <!-- User Info -->
 			<div class="bg-image bg-image-bottom" style="background-image: url('assets/media/photos/photo13@2x.jpg');">
 			  <div class="bg-primary-dark-op py-4">
@@ -127,48 +133,7 @@
 							</p>
 						  </div>
 						  <div class="col-lg-10">
-							<?php 
-							if($level==11){
-								$sql3 = "select * from log order by logDate desc limit 5";
-							}else{
-								$sql3 = "select * from log where ptk_id='$idku' order by logDate desc limit 5";
-							};
-							$query3 = $connect->query($sql3);
-							$adaact=$query3->num_rows;
-							if($adaact>0){
-							?>
-							<ul class="list list-activity">
-								<?php
-								while($nk=$query3->fetch_assoc()){
-									$ptk_id=$nk['ptk_id'];
-									$namaadmin=$connect->query("select * from ptk where ptk_id='$ptk_id'")->fetch_assoc();
-								?>
-								<li class="timeline-event">
-								  <i class="si si-user-follow text-success"></i>
-								  <div class="fw-semibold"><?=$namaadmin['nama'];?></div>
-								  <div>
-									<a class="fs-sm" href="javascript:void(0)"><?=$nk['activity'];?></a>
-								  </div>
-								  <div class="fs-xs text-muted"><?=$nk['logDate'];?></div>
-								</li>
-								<?php } ?>
-							</ul>
-							<?php
-							}else{
-							?>
-							<ul class="list list-activity">
-								<li class="timeline-event">
-								  <i class="si si-user-follow text-warning"></i>
-								  <div class="fw-semibold">Belum Ada Aktivitas</div>
-								  <div>
-									<a class="fs-sm" href="javascript:void(0)">Admin Template</a>
-								  </div>
-								  <div class="fs-xs text-muted">5 min ago</div>
-								</li>
-							</ul>
-							<?php 
-							};
-							?>
+							<div id="screen"></div>
 						  </div>
 						</div>
 					</div>
@@ -185,24 +150,27 @@
 						<div class="row items-push">
 						  <div class="col-lg-12">
 							<ul class="list list-activity">
+								<?php if(!empty($versi)){ $count = 0; foreach($versi as $row){ $count++; ?>
 								<li class="timeline-event">
 								  <!--<img class="img-avatar" src="<?=$avatar;?>" alt="">-->
 								  <i class="si si-user-follow text-success"></i>
-								  <div class="fw-semibold">Judul</div>
+								  <div class="fw-semibold"><?=$row['versi']; ?></div>
 								  <div>
-									<a class="fs-sm" href="javascript:void(0)">Isi Pengumuman</a>
+									<a class="fs-sm" href="javascript:void(0)"><?=$row['deskripsi']; ?></a>
 								  </div>
-								  <div class="fs-xs text-muted">Tanggal Pengumuman</div>
+								  <div class="fs-xs text-muted"><?=$row['tanggal']; ?></div>
 								</li>
+								<?php } }else{ ?>
 								<li class="timeline-event">
 								  <!--<img class="img-avatar" src="<?=$avadmin;?>" alt="">-->
 								  <i class="si si-user-follow text-success"></i>
-								  <div class="fw-semibold">Judul</div>
+								  <div class="fw-semibold">Tidak ada update terbaru</div>
 								  <div>
-									<a class="fs-sm" href="javascript:void(0)">Isi Pengumuman</a>
+									<a class="fs-sm" href="javascript:void(0)">Tidak ada update terbaru</a>
 								  </div>
-								  <div class="fs-xs text-muted">Tanggal Pengumuman</div>
+								  <div class="fs-xs text-muted">Now</div>
 								</li>
+								<?php } ?>
 							</ul>
 						  </div>
 						</div>
