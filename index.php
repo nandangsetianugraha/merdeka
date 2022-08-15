@@ -60,13 +60,6 @@ if($kelas==''){
 	$norombel=false;
 };
 $ab=substr($kelas,0,1);
-if($level==11){
-	$laki = $connect->query("select * from siswa where jk='L' and status=1")->num_rows;
-	$wanita=$connect->query("select * from siswa where jk='P' and status=1")->num_rows;
-}else{
-	$laki = $connect->query("select * from penempatan JOIN siswa USING(peserta_didik_id) where siswa.jk='L' and penempatan.rombel='$kelas' and penempatan.tapel='$tapel' and penempatan.smt='$smt'")->num_rows;
-	$wanita=$connect->query("select * from penempatan JOIN siswa USING(peserta_didik_id) where siswa.jk='L' and penempatan.rombel='$kelas' and penempatan.tapel='$tapel' and penempatan.smt='$smt'")->num_rows;
-};
 ?>
 <?php include "inc/head.php"; ?>
   <body>

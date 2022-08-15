@@ -27,6 +27,7 @@
 
     <!-- Stylesheets -->
 	<!-- Page JS Plugins CSS -->
+	<link rel="stylesheet" href="<?=base_url();?>assets/js/plugins/fullcalendar/lib/main.css">
 	<link rel="stylesheet" href="<?=base_url();?>assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
 	<link rel="stylesheet" href="<?=base_url();?>assets/js/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/js/plugins/datatables-bs5/css/dataTables.bootstrap5.min.css">

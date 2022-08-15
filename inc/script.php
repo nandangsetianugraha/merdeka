@@ -4,6 +4,7 @@
     <script src="<?=base_url();?>assets/js/lib/jquery.min.js"></script>
 
     <!-- Page JS Plugins -->
+	<script src="<?=base_url();?>assets/js/plugins/fullcalendar/lib/main.js"></script>
 	<script src="<?=base_url();?>assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 	<script src="<?=base_url();?>assets/js/plugins/select2/js/select2.full.min.js"></script>
     <script src="<?=base_url();?>assets/js/plugins/chart.js/chart.min.js"></script>

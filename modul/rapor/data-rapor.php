@@ -45,7 +45,6 @@ while ($row = $query->fetch_assoc()) {
 	while ($row1 = $query1->fetch_assoc()) {
 		$idm=$row1['id_mapel'];
 		$ceks = $connect->query("SELECT * FROM raport_ikm WHERE id_pd='$idp' and kelas='$kelas' and smt='$smt' and tapel='$tapel' and mapel='$idm'")->num_rows;
-		
 		if($ceks>0){
 			$tanda='<i class="fa fa-check"></i>';
 			$btns='btn-primary';
@@ -59,7 +58,29 @@ while ($row = $query->fetch_assoc()) {
                   '.$tanda.' '.$row1['kd_mapel'].'
                 </button>';
 		};
-	}
+	};
+	$cekkes = $connect->query("SELECT * FROM data_kesehatan WHERE peserta_didik_id='$idp' and smt='$smt' and tapel='$tapel'")->num_rows;
+	if($cekkes>0){
+		$tanda='<i class="fa fa-check"></i>';
+		$btns='btn-primary';
+	}else{
+		$tanda='<i class="fa fa-times opacity-50 me-1"></i>';
+		$btns='btn-danger';
+	};
+	$tombol.='<br/><button type="button" class="btn btn-sm '.$btns.' me-1 mb-1">
+                  '.$tanda.' Data Kesehatan
+                </button>';
+	$cekabs = $connect->query("SELECT * FROM data_absensi WHERE peserta_didik_id='$idp' and smt='$smt' and tapel='$tapel'")->num_rows;
+	if($cekabs>0){
+		$tanda='<i class="fa fa-check"></i>';
+		$btns='btn-primary';
+	}else{
+		$tanda='<i class="fa fa-times opacity-50 me-1"></i>';
+		$btns='btn-danger';
+	};
+	$tombol.='<button type="button" class="btn btn-sm '.$btns.' me-1 mb-1">
+                  '.$tanda.' Data Absensi
+                </button>';
 	
 	//$namasis=$pn['nama'];
 	$output['data'][] = array(

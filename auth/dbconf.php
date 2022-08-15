@@ -1,9 +1,6 @@
 <?php
 //DATABASE CONNECTION VARIABLES
-$host = "localhost"; // Host name
-$username = "root"; // Mysql username
-$password = ""; // Mysql password
-$db_name = "apins8"; // Database name
+include "../inc/db_connect.php";
 
 //DO NOT CHANGE BELOW THIS LINE UNLESS YOU CHANGE THE NAMES OF THE MEMBERS AND LOGINATTEMPTS TABLES
 

@@ -2,6 +2,13 @@
 require_once 'inc/Json.class.php'; 
 $db = new Json();
 $versi = $db->getRows();
+if($level==11){
+	$laki = $connect->query("select * from siswa where jk='L' and status=1")->num_rows;
+	$wanita=$connect->query("select * from siswa where jk='P' and status=1")->num_rows;
+}else{
+	$laki = $connect->query("select * from penempatan JOIN siswa USING(peserta_didik_id) where siswa.jk='L' and penempatan.rombel='$kelas' and penempatan.tapel='$tapel' and penempatan.smt='$smt'")->num_rows;
+	$wanita=$connect->query("select * from penempatan JOIN siswa USING(peserta_didik_id) where siswa.jk='P' and penempatan.rombel='$kelas' and penempatan.tapel='$tapel' and penempatan.smt='$smt'")->num_rows;
+};
 ?>
 
 		  <!-- User Info -->

@@ -1,5 +1,11 @@
 [
   {
+    "versi": "v2022.08.03",
+    "deskripsi": "- [Penambahan] Menu Kalendar Pendidikan",
+    "tanggal": "03/08/2022",
+	"id":5
+  },
+  {
     "versi": "v2022.07.30",
     "deskripsi": "- [Penambahan] Menu Cetak Rapor",
     "tanggal": "30/07/2022",
